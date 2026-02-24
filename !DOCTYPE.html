@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      text-align: center;
+      background: url('background.jpeg') no-repeat center top fixed;
+      background-size: cover; /* fills screen while keeping proportions */
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+      text-shadow: 2px 2px #000;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px auto;
+      width: 60%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    /* Train of images */
+    .train {
+      position: absolute;
+      bottom: 50px;
+      display: flex;
+      animation: moveTrain 45s linear infinite; /* slower movement */
+    }
+
+    .train img {
+      width: 200px;   /* enlarged */
+      height: 140px;  /* enlarged */
+      margin: 0 15px;
+      border: 5px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    @keyframes moveTrain {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-200%); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="birthday_song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h1>🎂 Happy Birthday, Darlinggg😘! 🎂</h1>
+
+  <div class="card">
+    <p>Oru valiyaga 18 aiduchu 💪 Athukunu Entha  thappana mudivu eduthuratha .</p>
+    <p>May all your dreams come true this year! 💖</p>
+  </div>
+
+  <!-- Train of Images -->
+  <div class="train">
+    <img src="photo1.jpeg" alt="Memory 1">
+    <img src="photo2.jpeg" alt="Memory 2">
+    <img src="photo3.jpeg" alt="Memory 3">
+    <img src="photo4.jpeg" alt="Memory 4">
+    <img src="photo5.jpeg" alt="Memory 5">
+    <img src="photo6.jpeg" alt="Memory 6">
+    <img src="photo7.jpeg" alt="Memory 7">
+    <img src="photo8.jpeg" alt="Memory 8">
+    <img src="photo9.jpeg" alt="Memory 9">
+    <img src="photo10.jpeg" alt="Memory 10">
+    <img src="photo11.jpeg" alt="Memory 11">
+    <img src="photo12.jpeg" alt="Memory 12">
+    <img src="photo13.jpeg" alt="Memory 13">
+    <img src="photo14.jpeg" alt="Memory 14">
+    <img src="photo15.jpeg" alt="Memory 15">
+    <img src="photo16.jpeg" alt="Memory 16">
+    <img src="photo17.jpeg" alt="Memory 17">
+    <img src="photo18.jpeg" alt="Memory 18">
+    <img src="photo19.jpeg" alt="Memory 19">
+    <img src="photo20.jpeg" alt="Memory 20">
+    <img src="photo21.jpeg" alt="Memory 21">
+    <!-- Duplicate set for seamless loop -->
+    <img src="photo1.jpeg" alt="Memory 1">
+    <img src="photo2.jpeg" alt="Memory 2">
+    <img src="photo3.jpeg" alt="Memory 3">
+    <img src="photo4.jpeg" alt="Memory 4">
+  </div>
+</body>
+</html>
