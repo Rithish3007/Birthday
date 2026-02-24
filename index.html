@@ -12,7 +12,7 @@
       color: #fff;
       text-align: center;
       background: url('background.jpeg') no-repeat center top fixed;
-      background-size: cover; /* fills screen while keeping proportions */
+      background-size: cover;
       overflow: hidden;
     }
 
@@ -36,12 +36,12 @@
       position: absolute;
       bottom: 50px;
       display: flex;
-      animation: moveTrain 45s linear infinite; /* slower movement */
+      animation: moveTrain 60s linear infinite;
     }
 
     .train img {
-      width: 200px;   /* enlarged */
-      height: 140px;  /* enlarged */
+      width: 220px;
+      height: 160px;
       margin: 0 15px;
       border: 5px solid #fff;
       border-radius: 10px;
@@ -50,21 +50,34 @@
 
     @keyframes moveTrain {
       from { transform: translateX(100%); }
-      to { transform: translateX(-200%); }
+      to { transform: translateX(-250%); }
+    }
+
+    /* Play button styling */
+    #playButton {
+      background: #ff4081;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body>
   <!-- Background Music -->
-  <audio autoplay loop>
-    <source src="birthday_song.mp3" type="audio/mpeg">
+  <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
   <h1>🎂 Happy Birthday, Darlinggg😘! 🎂</h1>
 
   <div class="card">
-    <p>Oru valiyaga 18 aiduchu 💪 Athukunu Entha  thappana mudivu eduthuratha .</p>
+    <p>Oru valiyaga 18 aiduchu 💪 Athukunu Entha thappana mudivu eduthuratha😂.</p>
     <p>May all your dreams come true this year! 💖</p>
   </div>
 
@@ -97,5 +110,29 @@
     <img src="photo3.jpeg" alt="Memory 3">
     <img src="photo4.jpeg" alt="Memory 4">
   </div>
+
+  <!-- Play button (appears if autoplay fails) -->
+  <button id="playButton">▶ Play Music</button>
+
+  <!-- JavaScript to force autoplay -->
+  <script>
+    const music = document.getElementById('bg-music');
+    const playButton = document.getElementById('playButton');
+
+    // Try autoplay on load
+    window.addEventListener('load', () => {
+      music.play().then(() => {
+        playButton.style.display = 'none'; // hide button if autoplay works
+      }).catch(() => {
+        playButton.style.display = 'inline-block'; // show button if blocked
+      });
+    });
+
+    // Fallback: user clicks button
+    playButton.addEventListener('click', () => {
+      music.play();
+      playButton.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
